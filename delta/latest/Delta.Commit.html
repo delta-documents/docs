@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.5">
+    <meta name="project" content="delta v0.1.0">
+
+    <title>Delta.Commit — delta v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
+
+    <script src="dist/sidebar_items-b7a74749ee.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-b5f3440501744dc8be3d.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+delta
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Delta.Commit</span> <small>behaviour</small>
+  <small class="app-vsn" translate="no">(delta v0.1.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Internal commits API</p><p>An interface to work on top of <a href="Delta.DataLayer.html"><code class="inline">Delta.DataLayer</code></a> which should also implement <a href="Delta.Commit.html#content"><code class="inline">Delta.Commit</code></a></p>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:id/0" translate="no">id()</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:t/0" translate="no">t()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Represents a commit made by user to a document.</p></div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-callbacks summary">
+    <h2>
+      <a href="#callbacks">Callbacks</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:delete/3" translate="no">delete(layer_id, id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as <a href="#delete/1"><code class="inline">Delta.Commit.delete/1</code></a>, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:get/3" translate="no">get(layer_id, id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as <code class="inline">Delta.Commit.get/1</code>, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:list/2" translate="no">list(layer_id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as <a href="#list/1"><code class="inline">Delta.Commit.list/1</code></a>, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:list/4" translate="no">list(layer_id, arg2, arg3, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as <code class="inline">Delta.Commit.list/2</code>, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:squash/4" translate="no">squash(layer_id, id, id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as <a href="#squash/2"><code class="inline">Delta.Commit.squash/2</code></a>, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:write/3" translate="no">write(layer_id, t, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as Delta.Commit.write/1, but returns data with continuation</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:write_many/3" translate="no">write_many(layer_id, list, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Same as Delta.Commit.write_many/1, but returns data with continuation</p></div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#add_commits/1" translate="no">add_commits(commits)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Adds commits to a document's history and checks for history consistency.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete/1" translate="no">delete(change_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Deletes commit with <code class="inline">id = commit_id</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get/2" translate="no">get(document_id, commit_id)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#id/1" translate="no">id(id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Gets id from id()</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list/1" translate="no">list(document_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Lists commits of <code class="inline">Delta.Documnent</code> with <code class="inline">id = document_id</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list/3" translate="no">list(document_id, from_commit_id, to_commit_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Lists commit from newest – <code class="inline">from_commit_id</code> to oldest – <code class="inline">to_commit_id</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#resolve_conflicts/2" translate="no">resolve_conflicts(commits, history)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Checks if commits have conflict(s) with history and resolves them if possible.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#squash/2" translate="no">squash(commit_id_1, commit_id_2)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Squashes Delta.Commit with <code class="inline">id = commit_id_2</code> into one with <code class="inline">id = commit_id_1</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#validate/1" translate="no">validate(commit)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Validates commit according to the following rules</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#validate_many/1" translate="no">validate_many(commits)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Validates commits according to the following rules</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#write/1" translate="no">write(commit)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Writes commit.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#write_many/1" translate="no">write_many(commits)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Writes commits.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:id/0">
+
+  <div class="detail-header">
+    <a href="#t:id/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">id()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> id() :: <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>() | <a href="#t:t/0">t</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="t:t/0">
+
+  <div class="detail-header">
+    <a href="#t:t/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">t()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> t() :: %Delta.Commit{
+  autosquash?: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(),
+  delta: <a href="Delta.Json.Patch.html#t:t/0">Delta.Json.Patch.t</a>(),
+  document_id: <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>(),
+  id: <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>(),
+  meta: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>(),
+  order: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>(),
+  previous_commit_id: <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>(),
+  reverse_delta: <a href="Delta.Json.Patch.html#t:t/0">Delta.Json.Patch.t</a>(),
+  updated_at: <a href="https://hexdocs.pm/elixir/DateTime.html#t:t/0">DateTime.t</a>()
+}</pre>
+
+      </div>
+
+<p>Represents a commit made by user to a document.</p><h2 id="t:t/0-fields" class="section-heading">
+  <a href="#t:t/0-fields" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fields</p>
+  </a>
+  Fields
+</h2>
+<ul><li><code class="inline">:id</code> – UUIDv4 in default form. <strong>Required</strong></li><li><code class="inline">:previous_commit_id</code> – UUIDv4 in default form. Used to order commits of particular document to form a history. <strong>Required</strong></li><li><code class="inline">:document_id</code> – UUIDv4 in default from. <strong>Required</strong></li><li><code class="inline">:order</code> – Order of commit in document's history. <em>Autogenerated</em></li><li><code class="inline">:autosquash?</code> – Should the commits be squashed with the last commit with <code class="inline">:delta</code> with same paths</li><li><code class="inline">:delta</code> – Changes to document in RFC 6902 json patch format. <strong>Required</strong></li><li><code class="inline">:reverse_delta</code> – RFC 6902 json patch to revert document to previous state. Autogenerated</li><li><code class="inline">:meta</code> – any metadata, e. g. user who made it</li><li><code class="inline">:updated_at</code> – when the commit was updated.</li></ul><h2 id="t:t/0-autosquashing" class="section-heading">
+  <a href="#t:t/0-autosquashing" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">autosquashing</p>
+  </a>
+  Autosquashing
+</h2>
+<p>Autosquashing is delta's feature for continious and frequent document updates. It reduces the number of commits by squashing (see <a href="#squash/2"><code class="inline">Delta.Commit.squash/2</code></a>).
+In order for two commits to be autosquashed, they must be marked <code class="inline">autosquash?: true</code> and have <code class="inline">delta</code> with same paths.
+If there will be a commit with <code class="inline">autosquahs?: false</code> and its delta will have any path which is being autosquahed at the moment, the commit will not be squashed.
+For autosquash commit no checks of <code class="inline">previous_commit_id</code> are performed.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="callbacks" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#callbacks">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Callbacks
+    </h1>
+    <div class="callbacks-list">
+<section class="detail" id="c:delete/3">
+
+  <div class="detail-header">
+    <a href="#c:delete/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">delete(layer_id, id, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> delete(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), <a href="#t:id/0">id</a>(), continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, :ok, <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as <a href="#delete/1"><code class="inline">Delta.Commit.delete/1</code></a>, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:get/3">
+
+  <div class="detail-header">
+    <a href="#c:get/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">get(layer_id, id, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> get(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), <a href="#t:id/0">id</a>(), continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, <a href="#t:t/0">t</a>(), <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}
+  | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>(), <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as <code class="inline">Delta.Commit.get/1</code>, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:list/2">
+
+  <div class="detail-header">
+    <a href="#c:list/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">list(layer_id, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> list(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, [<a href="#t:t/0">t</a>()], <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as <a href="#list/1"><code class="inline">Delta.Commit.list/1</code></a>, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:list/4">
+
+  <div class="detail-header">
+    <a href="#c:list/4" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">list(layer_id, arg2, arg3, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> list(
+  <a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(),
+  <a href="#t:id/0">id</a>() | nil,
+  <a href="#t:id/0">id</a>() | nil,
+  continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()
+) ::
+  {:atomic, [<a href="#t:t/0">t</a>()], <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as <code class="inline">Delta.Commit.list/2</code>, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:squash/4">
+
+  <div class="detail-header">
+    <a href="#c:squash/4" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">squash(layer_id, id, id, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> squash(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), <a href="#t:id/0">id</a>(), <a href="#t:id/0">id</a>(), continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, <a href="#t:t/0">t</a>(), <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}
+  | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>(), <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as <a href="#squash/2"><code class="inline">Delta.Commit.squash/2</code></a>, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:write/3">
+
+  <div class="detail-header">
+    <a href="#c:write/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">write(layer_id, t, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> write(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), <a href="#t:t/0">t</a>(), continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, <a href="#t:t/0">t</a>(), <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}
+  | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>() | <a href="Delta.Errors.AlreadyExist.html#t:t/0">Delta.Errors.AlreadyExist.t</a>(),
+     <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as Delta.Commit.write/1, but returns data with continuation</p>
+  </section>
+</section>
+<section class="detail" id="c:write_many/3">
+
+  <div class="detail-header">
+    <a href="#c:write_many/3" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">write_many(layer_id, list, continuation?)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> write_many(<a href="Delta.DataLayer.html#t:layer_id/0">Delta.DataLayer.layer_id</a>(), [<a href="#t:t/0">t</a>()], continuation? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) ::
+  {:atomic, [<a href="#t:t/0">t</a>()], <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}
+  | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>() | <a href="Delta.Errors.AlreadyExist.html#t:t/0">Delta.Errors.AlreadyExist.t</a>(),
+     <a href="Delta.DataLayer.html#t:continuation/0">Delta.DataLayer.continuation</a>()}</pre>
+
+      </div>
+
+<p>Same as Delta.Commit.write_many/1, but returns data with continuation</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="add_commits/1">
+
+  <div class="detail-header">
+    <a href="#add_commits/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_commits(commits)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> add_commits([<a href="#t:t/0">t</a>()]) ::
+  {:atomic, [<a href="#t:t/0">t</a>()]} | {:aborted, <a href="Delta.Errors.Conflict.html#t:t/0">Delta.Errors.Conflict.t</a>()} | {:aborted, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+<p>Adds commits to a document's history and checks for history consistency.</p><p>Checks for conflicts of the first commit.</p><p>If the commit has resolvable conflict (commits's delta does not overlaps with deltas of all conflicting commits), resolves the conflict and writes the commit.
+If the commit has no conflicts, writes the commit.</p><p>If the commit has unresolvable conflict, aborts with <code class="inline">Delta.Errors.Conflict.t()</code>.</p>
+  </section>
+</section>
+<section class="detail" id="delete/1">
+
+  <div class="detail-header">
+    <a href="#delete/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete(change_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> delete(<a href="#t:id/0">id</a>()) :: {:atomic, :ok}</pre>
+
+      </div>
+
+<p>Deletes commit with <code class="inline">id = commit_id</code>.</p><p>Returns <code class="inline">{:atomic, :ok}</code> even if commit with <code class="inline">id = commit_id</code> does not exist.</p>
+  </section>
+</section>
+<section class="detail" id="get/2">
+
+  <div class="detail-header">
+    <a href="#get/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get(document_id, commit_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> get(<a href="Delta.Document.html#t:id/0">Delta.Document.id</a>(), <a href="#t:id/0">id</a>()) ::
+  {:atomic, <a href="#t:t/0">t</a>()} | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="id/1">
+
+  <div class="detail-header">
+    <a href="#id/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">id(id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> id(<a href="#t:id/0">id</a>() | nil) :: <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Gets id from id()</p>
+  </section>
+</section>
+<section class="detail" id="list/1">
+
+  <div class="detail-header">
+    <a href="#list/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list(document_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list(<a href="Delta.Document.html#t:id/0">Delta.Document.id</a>()) :: {:atomic, [<a href="#t:t/0">t</a>()]}</pre>
+
+      </div>
+
+<p>Lists commits of <code class="inline">Delta.Documnent</code> with <code class="inline">id = document_id</code>.</p><p>Expensive operation.
+If document does not exists, returns empty list</p>
+  </section>
+</section>
+<section class="detail" id="list/3">
+
+  <div class="detail-header">
+    <a href="#list/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list(document_id, from_commit_id, to_commit_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> list(<a href="Delta.Document.html#t:id/0">Delta.Document.id</a>(), <a href="#t:id/0">id</a>(), <a href="#t:id/0">id</a>()) :: {:atomic, [<a href="#t:t/0">t</a>()]}</pre>
+
+      </div>
+
+<p>Lists commit from newest – <code class="inline">from_commit_id</code> to oldest – <code class="inline">to_commit_id</code>.</p><p>If commit with <code class="inline">id = from_commit_id</code> does not exist, assumes it to be the latest commit.
+If commit with <code class="inline">id = to_commit_id</code> does not exist, assumes it to be the first commit.</p>
+  </section>
+</section>
+<section class="detail" id="resolve_conflicts/2">
+
+  <div class="detail-header">
+    <a href="#resolve_conflicts/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">resolve_conflicts(commits, history)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> resolve_conflicts(commtis :: [<a href="#t:t/0">t</a>()], history :: [<a href="#t:t/0">t</a>()]) ::
+  {:ok, [<a href="#t:t/0">t</a>()]} | {:error, <a href="Delta.Errors.Conflict.html#t:t/0">Delta.Errors.Conflict.t</a>()}</pre>
+
+      </div>
+
+<p>Checks if commits have conflict(s) with history and resolves them if possible.</p><p>Commits must be sorted by theirs (would be) ascending order – first commit is the first element of the list.
+History must be sorted by descnding order – last commit is the first element of the list.</p>
+  </section>
+</section>
+<section class="detail" id="squash/2">
+
+  <div class="detail-header">
+    <a href="#squash/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">squash(commit_id_1, commit_id_2)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> squash(<a href="#t:id/0">id</a>(), <a href="#t:id/0">id</a>()) :: {:atomic, <a href="#t:t/0">t</a>()} | {:aborted, <a href="Delta.Errors.DoesNotExist.html#t:t/0">Delta.Errors.DoesNotExist.t</a>()}</pre>
+
+      </div>
+
+<p>Squashes Delta.Commit with <code class="inline">id = commit_id_2</code> into one with <code class="inline">id = commit_id_1</code>.</p><p>Resulting commit will have metadata of the second commit.</p><p>The second commit may not exist.</p><p>Aborts with <code class="inline">%Delta.Errors.DoesNotExist{}</code> if commit with <code class="inline">id = commit_id_1</code> or <code class="inline">id = commit_id_2</code> does not exist.</p>
+  </section>
+</section>
+<section class="detail" id="validate/1">
+
+  <div class="detail-header">
+    <a href="#validate/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">validate(commit)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> validate(<a href="#t:t/0">t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: {:ok, <a href="#t:t/0">t</a>()} | {:error, <a href="Delta.Errors.Validation.html#t:t/0">Delta.Errors.Validation.t</a>()}</pre>
+
+      </div>
+
+<p>Validates commit according to the following rules:</p><ul><li><code class="inline">:id</code> – must be UUIDv4 in default form</li><li><code class="inline">:previous_commit_id</code> – must be UUIDv4 in default form of previous commit or <code class="inline">nil</code></li><li><code class="inline">:delta</code> – must be valid RFC 6092 Json delta</li><li><code class="inline">:document_id</code> – must be valid UUIDv4 of document in default form.</li></ul><p>Note: other functions exptect valid input, therefor before passing data to them it should be validated.</p>
+  </section>
+</section>
+<section class="detail" id="validate_many/1">
+
+  <div class="detail-header">
+    <a href="#validate_many/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">validate_many(commits)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> validate_many([<a href="#t:t/0">t</a>() | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()]) ::
+  {:ok, [<a href="#t:t/0">t</a>()]} | {:error, <a href="Delta.Errors.Validation.html#t:t/0">Delta.Errors.Validation.t</a>()}</pre>
+
+      </div>
+
+<p>Validates commits according to the following rules:</p><ul><li>Commits must be sequential, i. e. <code class="inline">commit[i].id = commit[i + 1].previous_id</code></li><li>All commits must have same <code class="inline">:document_id</code></li><li>Each commit must be valid (See <a href="#validate/1"><code class="inline">validate/1</code></a>)</li></ul>
+  </section>
+</section>
+<section class="detail" id="write/1">
+
+  <div class="detail-header">
+    <a href="#write/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">write(commit)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> write(<a href="#t:t/0">t</a>()) :: {:atomic, <a href="#t:t/0">t</a>()} | {:aborted, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+          <pre translate="no"><span class="attribute">@spec</span> write([<a href="#t:t/0">t</a>()]) :: {:atomic, [<a href="#t:t/0">t</a>()]} | {:aborted, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+<p>Writes commit.</p>
+  </section>
+</section>
+<section class="detail" id="write_many/1">
+
+  <div class="detail-header">
+    <a href="#write_many/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">write_many(commits)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Writes commits.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.5) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.5">
+    <meta name="project" content="delta v0.1.0">
+
+    <title>Delta.DataLayer — delta v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
+
+    <script src="dist/sidebar_items-b7a74749ee.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-b5f3440501744dc8be3d.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="api-reference.html" class="sidebar-projectName" translate="no">
+delta
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+  <span translate="no">Delta.DataLayer</span> <small>behaviour</small>
+  <small class="app-vsn" translate="no">(delta v0.1.0)</small>
+
+</h1>
+
+
+  <section id="moduledoc">
+<p>Behaviour of Delta Data Layers.</p><p><em>Data layer</em> is a GenServer, managing operations with entites associated with document.
+Each instance is expected to:</p><ul><li>control its uniuqe portion of data.</li><li>join Swarm group <a href="Delta.DataLayer.html#content"><code class="inline">Delta.DataLayer</code></a> for proper layer_id form resolution.</li></ul>
+  </section>
+
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-types summary">
+    <h2>
+      <a href="#types">Types</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:continuation/0" translate="no">continuation()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Specifies operation continuation on another data layer. Is executed on data layer with <code class="inline">layer_id</code>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#t:layer_id/0" translate="no">layer_id()</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Identifier for layer instance, can be one of</p></div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-callbacks summary">
+    <h2>
+      <a href="#callbacks">Callbacks</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:crash_handler/1" translate="no">crash_handler(any)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns function that should be called on process which monitors <em>data layer</em>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#c:start_link/2" translate="no">start_link(document_id, opts)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Starts <em>data layer</em> for isolating any data related to document.</p></div>
+
+      </div>
+
+  </div>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#continue/2" translate="no">continue(layer_id, continuation)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Runs continuation on specified layer</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#layer_id_normal/1" translate="no">layer_id_normal(layer_id)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Converts <code class="inline">layer_id</code> to normal form.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#layer_id_pid/1" translate="no">layer_id_pid(pid)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Converts <code class="inline">layer_id</code> to pid form.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="types" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#types">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Types
+    </h1>
+    <div class="types-list">
+<section class="detail" id="t:continuation/0">
+
+  <div class="detail-header">
+    <a href="#t:continuation/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">continuation()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> continuation() :: (<a href="#t:layer_id/0">layer_id</a>() -&gt; <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) | {<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()]} | nil</pre>
+
+      </div>
+
+<p>Specifies operation continuation on another data layer. Is executed on data layer with <code class="inline">layer_id</code>.</p>
+  </section>
+</section>
+<section class="detail" id="t:layer_id/0">
+
+  <div class="detail-header">
+    <a href="#t:layer_id/0" class="detail-link" title="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this type</span>
+    </a>
+    <h1 class="signature" translate="no">layer_id()</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@type</span> layer_id() :: {<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">module</a>(), <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>()} | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>() | {<a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">module</a>(), <a href="Delta.Document.html#t:t/0">Delta.Document.t</a>()}</pre>
+
+      </div>
+
+<p>Identifier for layer instance, can be one of:</p><ul><li><code class="inline">{module(), Delta.uuid4()}</code>, where <code class="inline">module()</code> is data layer module (normal form)</li><li><code class="inline">pid()</code> of data layer process</li><li><code class="inline">{module(), Delta.Document.t()}</code> – same as normal form, but id will be extracted from a document.</li></ul><p>Note that any <code class="inline">Delta.uuid4()</code> is valid id in type context, in other words, there is no checks if document exists to be performed.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="callbacks" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#callbacks">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Callbacks
+    </h1>
+    <div class="callbacks-list">
+<section class="detail" id="c:crash_handler/1">
+
+  <div class="detail-header">
+    <a href="#c:crash_handler/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">crash_handler(any)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> crash_handler(<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()) :: (... -&gt; <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>())</pre>
+
+      </div>
+
+<p>Returns function that should be called on process which monitors <em>data layer</em>.</p>
+  </section>
+</section>
+<section class="detail" id="c:start_link/2">
+
+  <div class="detail-header">
+    <a href="#c:start_link/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">start_link(document_id, opts)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> start_link(document_id :: <a href="Delta.Document.html#t:t/0">Delta.Document.t</a>() | <a href="Delta.html#t:uuid4/0">Delta.uuid4</a>(), opts :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>()} | {:error, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()}</pre>
+
+      </div>
+
+<p>Starts <em>data layer</em> for isolating any data related to document.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="continue/2">
+
+  <div class="detail-header">
+    <a href="#continue/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">continue(layer_id, continuation)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> continue(<a href="#t:layer_id/0">layer_id</a>(), <a href="#t:continuation/0">continuation</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">any</a>()</pre>
+
+      </div>
+
+<p>Runs continuation on specified layer</p>
+  </section>
+</section>
+<section class="detail" id="layer_id_normal/1">
+
+  <div class="detail-header">
+    <a href="#layer_id_normal/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">layer_id_normal(layer_id)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> layer_id_normal(<a href="#t:layer_id/0">layer_id</a>()) :: <a href="#t:layer_id/0">layer_id</a>()</pre>
+
+      </div>
+
+<p>Converts <code class="inline">layer_id</code> to normal form.</p>
+  </section>
+</section>
+<section class="detail" id="layer_id_pid/1">
+
+  <div class="detail-header">
+    <a href="#layer_id_pid/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">layer_id_pid(pid)</h1>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> layer_id_pid(<a href="#t:layer_id/0">layer_id</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">pid</a>()</pre>
+
+      </div>
+
+<p>Converts <code class="inline">layer_id</code> to pid form.</p>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+      <footer class="footer">
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.5) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
