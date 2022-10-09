@@ -38,6 +38,20 @@ jobs:
             echo "var versionNodes = [" > $r/.doc-versions.js;
             for v in `find $r -type d -maxdepth 1 -mindepth 1 -exec basename {} \;`; do echo "{version: \"$v\", url: \"${{ steps.setup.outputs.base_url }}/$r/$v/\"}," >> $r/.doc-versions.js; done
             echo "]" >> $r/.doc-versions.js;
+
+            echo <<- EOF > $r/index.html
+            <!DOCTYPE HTML>
+            <meta charset="UTF-8">
+            <meta http-equiv="refresh" content="1; url=${{ steps.setup.outputs.base_url }}/$r/latest">
+            
+            <script>
+              window.location.href = "${{ steps.setup.outputs.base_url }}/$r/latest"
+            </script>
+            
+            <title>Page Redirection</title>
+            
+            If you are not redirected automatically, follow the <a href='${{ steps.setup.outputs.base_url }}/$r/latest'>link to latest docs</a>
+            EOF
           done
 
       - name: Upload artifact
