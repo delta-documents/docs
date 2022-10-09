@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.28.5">
+    <meta name="project" content="Delta v0.1.0">
+
+      <meta name="author" content="https://github.com/florius0">
+
+    <title>Delta — Delta v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
+
+    <script src="dist/sidebar_items-edc27c3111.js"></script>
+
+      <script src="../.doc-versions.js"></script>
+
+    <script async src="dist/app-b5f3440501744dc8be3d.js"></script>
+
+
+  </head>
+  <body data-type="extras">
+    <script>
+
+      try {
+        var settings = JSON.parse(localStorage.getItem('ex_doc:settings') || '{}');
+
+        if (settings.theme === 'dark' ||
+           ((settings.theme === 'system' || settings.theme == null) &&
+             window.matchMedia('(prefers-color-scheme: dark)').matches)
+           ) {
+          document.body.classList.add('dark')
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+
+<section class="sidebar">
+  <button class="sidebar-button sidebar-toggle" aria-label="toggle sidebar">
+    <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+  </button>
+
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <i class="ri-search-2-line" aria-hidden="true" title="Submit search"></i>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <i class="ri-close-line ri-lg" aria-hidden="true" title="Cancel search"></i>
+    </button>
+    <label class="search-label">
+      <p class="sr-only">Search</p>
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+
+    <div class="sidebar-projectDetails">
+      <a href="https://github.com/delta-documents" class="sidebar-projectName" translate="no">
+Delta
+      </a>
+      <strong class="sidebar-projectVersion" translate="no">
+        v0.1.0
+      </strong>
+    </div>
+    <ul class="sidebar-listNav">
+      <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+        <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+    </ul>
+  </div>
+
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <output role="status" id="toast"></output>
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1>
+<button class="settings display-settings">
+  <i class="ri-settings-3-line"></i>
+  <span class="sr-only">Settings</span>
+</button>
+
+
+    <a href="https://github.com/delta-documents/delta/blob/main/README.md#L1" title="View Source" class="view-source" rel="help">
+      <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+      <span class="sr-only">View Source</span>
+    </a>
+
+  <span>Delta</span>
+</h1>
+
+<h2 id="installation" class="section-heading">
+  <a href="#installation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">installation</p>
+  </a>
+  Installation
+</h2>
+<p>Delta is a fast distributed schema-less document-oriented JSON history service written in Elixir, where all updates to documents are represented as a <a href="https://www.rfc-editor.org/rfc/rfc6902.html">RFC 6092</a>-like deltas called changes</p><h2 id="purpose" class="section-heading">
+  <a href="#purpose" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">purpose</p>
+  </a>
+  Purpose
+</h2>
+<p>The purpose of the database is to provide developers with tool to build document-oriented application with soft-realtime distributed history features</p><h2 id="principles-and-capabilities" class="section-heading">
+  <a href="#principles-and-capabilities" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">principles-and-capabilities</p>
+  </a>
+  Principles and capabilities
+</h2>
+<h3 id="documents-and-collections" class="section-heading">
+  <a href="#documents-and-collections" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">documents-and-collections</p>
+  </a>
+  Documents and collections
+</h3>
+<p>As it was stated before, Delta is a document-oriented DB, which means that data is stored in a single <em>document</em> without relationships as opposed to a number of SQL tables and relationships.</p><p>In Delta, <em>documents</em> to not have schema, which means there is no restriction on how your data should be structured.</p><p>Each <em>document</em> belongs to a <em>collection</em> which are meant to be a way to organize your <em>documents</em> and to serve as a pseudo-datatype.</p><p><img src="docs/entety-relationship.drawio.svg" alt="Entity-Relationship diagram"/></p><h3 id="changes" class="section-heading">
+  <a href="#changes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">changes</p>
+  </a>
+  Changes
+</h3>
+<h3 id="reading-the-document" class="section-heading">
+  <a href="#reading-the-document" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">reading-the-document</p>
+  </a>
+  Reading the document
+</h3>
+<p>Document can be read as a whole using <code class="inline">get(collection_id, document_id)</code> of your driver or as a part by passing <code class="inline">path</code> in <code class="inline">get(collection_id, document_id, path)</code></p><h3 id="history" class="section-heading">
+  <a href="#history" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">history</p>
+  </a>
+  History
+</h3>
+<p>Each document has zero or more changes associated with it thus forming history of changes.
+History is a list of changes linked via <code class="inline">previous</code> attribute of a change. Changes may be added but never modified or deleted.</p><h3 id="subscriptions" class="section-heading">
+  <a href="#subscriptions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">subscriptions</p>
+  </a>
+  Subscriptions
+</h3>
+<p>Each client can subscribe to changes of a particular document</p><h3 id="synchronization" class="section-heading">
+  <a href="#synchronization" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">synchronization</p>
+  </a>
+  Synchronization
+</h3>
+<p>To be implemented</p><h2 id="api" class="section-heading">
+  <a href="#api" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">api</p>
+  </a>
+  API
+</h2>
+<p>Subject to change</p><h2 id="drivers" class="section-heading">
+  <a href="#drivers" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">drivers</p>
+  </a>
+  Drivers
+</h2>
+<p>To be implemented</p><h2 id="scaling" class="section-heading">
+  <a href="#scaling" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">scaling</p>
+  </a>
+  Scaling
+</h2>
+<p>To be implemented</p><h2 id="running" class="section-heading">
+  <a href="#running" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">running</p>
+  </a>
+  Running
+</h2>
+<ol><li><a href="https://elixir-lang.org/install.html#distributions">Instal Elixir</a></li><li><code class="inline">git clone https//githuhb.com/florius0/delta &amp;&amp; cd delta</code></li><li><code class="inline">mix run --no-halt</code></li></ol><h2 id="installation-as-mix-dependency" class="section-heading">
+  <a href="#installation-as-mix-dependency" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">installation-as-mix-dependency</p>
+  </a>
+  Installation as mix dependency
+</h2>
+<pre><code class="makeup elixir" translate="no"><span class="kd">def</span><span class="w"> </span><span class="nf">deps</span><span class="w"> </span><span class="k" data-group-id="1907341336-1">do</span><span class="w">
+  </span><span class="p" data-group-id="1907341336-2">[</span><span class="w">
+    </span><span class="p" data-group-id="1907341336-3">{</span><span class="ss">:delta</span><span class="p">,</span><span class="w"> </span><span class="ss">github</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;florius0/delta&quot;</span><span class="p" data-group-id="1907341336-3">}</span><span class="w">
+  </span><span class="p" data-group-id="1907341336-2">]</span><span class="w">
+</span><span class="k" data-group-id="1907341336-1">end</span></code></pre>
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+      <a href="api-reference.html" class="bottom-actions-button" rel="prev">
+        <span class="subheader">
+          ← Previous Page
+        </span>
+        <span class="title">
+API Reference
+        </span>
+      </a>
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+
+      <footer class="footer">
+
+        <p>
+          Built using
+          <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.28.5) for the
+
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
