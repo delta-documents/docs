@@ -36,7 +36,7 @@ jobs:
         run: |
           for r in `find . -type d -maxdepth 1 -mindepth 1 -exec basename {} \;`; do
           echo "var versionNodes = [" > $r/.doc-versions.js;
-          for v in `find $r -type d -maxdepth 1 -mindepth 1 -exec basename {} \;`; do echo "{version: \"$v\", url: \"${{ steps.setup.outputs.base_url }}/$r/$v/\"}," >> $r/.doc-versions.js; done
+          for v in `find $r -type d -maxdepth 1 -mindepth 1 -exec basename {} \;`; do echo "{version: \"$v\", url: \"${{ steps.setup.outputs.base_url }}/$r/$v\"}," >> $r/.doc-versions.js; done
           echo "]" >> $r/.doc-versions.js;
 
           cat <<EOF > $r/index.html;
