@@ -12,7 +12,7 @@
     <title>Delta — Delta v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
 
-    <script src="dist/sidebar_items-d9653e78f4.js"></script>
+    <script src="dist/sidebar_items-326d827615.js"></script>
 
       <script src="../.doc-versions.js"></script>
 
@@ -96,7 +96,7 @@ Delta
 </button>
 
 
-    <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/delta-documents/delta/blob/6e9a39d3d131126c3575386578f7d5f861848292/lib/delta.ex#L1" title="View Source" class="view-source" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
@@ -108,7 +108,18 @@ Delta
 
 
   <section id="moduledoc">
-<p>Delta Elixir API</p>
+<p>Delta Elixir API</p><h2 id="module-configuration" class="section-heading">
+  <a href="#module-configuration" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">configuration</p>
+  </a>
+  Configuration
+</h2>
+<p>Delta uses MongoDB for persistence and Mnesia for caching.</p><p>To configure Mnesia storage, add the following to your config:</p><pre><code class="makeup elixir" translate="no"><span class="n">config</span><span class="w"> </span><span class="ss">:mnesia</span><span class="p">,</span><span class="w"> </span><span class="ss">dir</span><span class="p">:</span><span class="w"> </span><span class="sc">&#39;./data/</span><span class="si" data-group-id="8344520242-1">#{</span><span class="n">config_env</span><span class="p" data-group-id="8344520242-2">(</span><span class="p" data-group-id="8344520242-2">)</span><span class="si" data-group-id="8344520242-1">}</span><span class="sc">/</span><span class="si" data-group-id="8344520242-3">#{</span><span class="n">node</span><span class="p" data-group-id="8344520242-4">(</span><span class="p" data-group-id="8344520242-4">)</span><span class="si" data-group-id="8344520242-3">}</span><span class="sc">&#39;</span></code></pre><p>Note that the <code class="inline">:dir</code> is charlist, not a string.
+If directory does not exist, it will be created.</p><p>To configure MongoDB connection params, set the <code class="inline">:mongo_params</code> key in your config:</p><pre><code class="makeup elixir" translate="no"><span class="n">config</span><span class="w"> </span><span class="ss">:delta</span><span class="p">,</span><span class="w"> </span><span class="ss">:mongo_params</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2852466043-1">[</span><span class="w">
+  </span><span class="ss">database</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;delta_</span><span class="si" data-group-id="2852466043-2">#{</span><span class="n">config_env</span><span class="p" data-group-id="2852466043-3">(</span><span class="p" data-group-id="2852466043-3">)</span><span class="si" data-group-id="2852466043-2">}</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;localhost&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">port</span><span class="p">:</span><span class="w"> </span><span class="mi">27017</span><span class="w">
+</span><span class="p" data-group-id="2852466043-1">]</span></code></pre><p>More information on MongoDB connection params can be found in the <a href="https://hexdocs.pm/mongodb_driver/Mongo.html#start_link/1">mongodb-driver docs</a></p>
   </section>
 
 
@@ -157,7 +168,7 @@ Types
     </a>
     <h1 class="signature" translate="no">uuid4()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta.ex#L6" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/6e9a39d3d131126c3575386578f7d5f861848292/lib/delta.ex#L31" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
