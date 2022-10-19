@@ -12,7 +12,7 @@
     <title>Delta.Commit.PersistentLayer — Delta v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
 
-    <script src="dist/sidebar_items-b24b2ea3e3.js"></script>
+    <script src="dist/sidebar_items-d9653e78f4.js"></script>
 
       <script src="../.doc-versions.js"></script>
 
@@ -96,7 +96,7 @@ Delta
 </button>
 
 
-    <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/commit/persistent_layer.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L1" title="View Source" class="view-source" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
@@ -112,6 +112,417 @@ Delta
   </section>
 
 
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+      Summary
+    </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#add_commits/3" translate="no">add_commits(layer_id, commits, continuation?)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#child_spec/1" translate="no">child_spec(init_arg)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns a specification to start this module under a supervisor.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#crash_handler/1" translate="no">crash_handler(map)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Returns anonymous function /0, which deletes mnesia table used by the layer.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#delete/3" translate="no">delete(layer_id, id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Deletes commit. Always successful. Continuation deletes commit on another data layer.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#from_mongo/1" translate="no">from_mongo(map)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#get/3" translate="no">get(layer_id, id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Gets commit.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list/2" translate="no">list(layer_id, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Lists all commits on this data layer.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#list/4" translate="no">list(layer_id, from, to, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Lists commits from one to another.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#start_link/2" translate="no">start_link(document_id, _ \\ nil)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Starts this DataLayer with specific document id.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#to_mongo/1" translate="no">to_mongo(commit)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#write/3" translate="no">write(layer_id, commit, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Writes commit.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#write_many/3" translate="no">write_many(layer_id, commits, continuation?)</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Writes a list of commits. Commits are assumed to have equal <code class="inline">document_id</code>.</p></div>
+
+      </div>
+
+  </div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+        <span class="sr-only">Link to this section</span>
+      </a>
+Functions
+    </h1>
+    <div class="functions-list">
+<section class="detail" id="add_commits/3">
+
+  <div class="detail-header">
+    <a href="#add_commits/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">add_commits(layer_id, commits, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L129" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="child_spec/1">
+
+  <div class="detail-header">
+    <a href="#child_spec/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">child_spec(init_arg)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L9" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns a specification to start this module under a supervisor.</p><p>See <a href="https://hexdocs.pm/elixir/Supervisor.html"><code class="inline">Supervisor</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="crash_handler/1">
+
+  <div class="detail-header">
+    <a href="#crash_handler/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">crash_handler(map)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L32" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Returns anonymous function /0, which deletes mnesia table used by the layer.</p>
+  </section>
+</section>
+<section class="detail" id="delete/3">
+
+  <div class="detail-header">
+    <a href="#delete/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">delete(layer_id, id, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L123" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Deletes commit. Always successful. Continuation deletes commit on another data layer.</p><p>See <a href="Delta.Commit.html#delete/1"><code class="inline">Delta.Commit.delete/1</code></a></p>
+  </section>
+</section>
+<section class="detail" id="from_mongo/1">
+
+  <div class="detail-header">
+    <a href="#from_mongo/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">from_mongo(map)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L144" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="get/3">
+
+  <div class="detail-header">
+    <a href="#get/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">get(layer_id, id, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L73" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Gets commit.</p><p>If it exists, continuation is always <code class="inline">nil</code></p><p>See <code class="inline">Delta.Commit.get/1</code></p>
+  </section>
+</section>
+<section class="detail" id="list/2">
+
+  <div class="detail-header">
+    <a href="#list/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list(layer_id, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L46" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Lists all commits on this data layer.</p><p>Continuation lists data on another data layer with priority to this data layer.</p><p>See <a href="Delta.Commit.html#list/1"><code class="inline">Delta.Commit.list/1</code></a></p>
+  </section>
+</section>
+<section class="detail" id="list/4">
+
+  <div class="detail-header">
+    <a href="#list/4" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">list(layer_id, from, to, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L59" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Lists commits from one to another.</p><p>Continuation lists data on another data layer with priority to this data layer.</p><p>See <a href="Delta.Commit.html#list/3"><code class="inline">Delta.Commit.list/3</code></a></p>
+  </section>
+</section>
+<section class="detail" id="start_link/2">
+
+    <span id="start_link/1"></span>
+
+  <div class="detail-header">
+    <a href="#start_link/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">start_link(document_id, _ \\ nil)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L24" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Starts this DataLayer with specific document id.</p><p>Has no options.</p>
+  </section>
+</section>
+<section class="detail" id="to_mongo/1">
+
+  <div class="detail-header">
+    <a href="#to_mongo/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">to_mongo(commit)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L168" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="write/3">
+
+  <div class="detail-header">
+    <a href="#write/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">write(layer_id, commit, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L87" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Writes commit.</p><p>Continuation writes commit on another data layer.</p><p>See <a href="Delta.Commit.html#write/1"><code class="inline">Delta.Commit.write/1</code></a></p>
+  </section>
+</section>
+<section class="detail" id="write_many/3">
+
+  <div class="detail-header">
+    <a href="#write_many/3" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">write_many(layer_id, commits, continuation?)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/commit/persistent_layer.ex#L105" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Writes a list of commits. Commits are assumed to have equal <code class="inline">document_id</code>.</p><p>Continuation writes commits on another data layer</p><p>See <a href="Delta.Commit.html#write_many/1"><code class="inline">Delta.Commit.write_many/1</code></a></p>
+  </section>
+</section>
+
+    </div>
+  </section>
 
       <footer class="footer">
 

@@ -12,7 +12,7 @@
     <title>Delta.Json.Patch — Delta v0.1.0</title>
     <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
 
-    <script src="dist/sidebar_items-b24b2ea3e3.js"></script>
+    <script src="dist/sidebar_items-d9653e78f4.js"></script>
 
       <script src="../.doc-versions.js"></script>
 
@@ -96,7 +96,7 @@ Delta
 </button>
 
 
-    <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L1" title="View Source" class="view-source" rel="help">
+    <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L1" title="View Source" class="view-source" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
@@ -108,7 +108,7 @@ Delta
 
 
   <section id="moduledoc">
-<p>Helper functions for Json Patch (RFC 6902)</p><p>Note that strictly speaking it is not RFC 6902-compliant.</p><ul><li>appliance of Delta.Json.Patch to data can never fail</li><li>test operation is ignored</li><li>replace and add considered to be the same operations</li></ul><p>This is due to optimisation reasons.</p>
+<p>Helper functions for Json Patch (RFC 6902)</p><p>Note that strictly speaking it is not RFC 6902-compliant.</p><ul><li>appliance of Delta.Json.Patch to data can never fail</li><li>test operation is ignored</li><li>replace and add considered to be the same operations</li></ul><p>This is due to optimization reasons.</p>
   </section>
 
 
@@ -223,6 +223,14 @@ Delta
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#paths/1" translate="no">paths(patch)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#squash/2" translate="no">squash(patch1, patch2)</a>
 
         </div>
@@ -254,7 +262,7 @@ Types
     </a>
     <h1 class="signature" translate="no">add()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L23" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L23" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -282,7 +290,7 @@ Types
     </a>
     <h1 class="signature" translate="no">copy()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L38" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L38" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -310,7 +318,7 @@ Types
     </a>
     <h1 class="signature" translate="no">move()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L33" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L33" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -338,7 +346,7 @@ Types
     </a>
     <h1 class="signature" translate="no">operation()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L18" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L18" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -366,7 +374,7 @@ Types
     </a>
     <h1 class="signature" translate="no">remove()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L28" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L28" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -394,7 +402,7 @@ Types
     </a>
     <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L16" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L16" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -435,7 +443,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">normalize(patch)</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L96" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L96" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -463,7 +471,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">overlap?(patch1, patch2)</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L110" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L110" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -491,7 +499,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">parse(s)</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L48" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L48" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -510,6 +518,34 @@ Functions
 <p>Parses json patch into Delta.Json.Patch.t()</p><p>Note:</p><ul><li>test operation is ignored</li><li>replace and add considered to be the same operations</li></ul>
   </section>
 </section>
+<section class="detail" id="paths/1">
+
+  <div class="detail-header">
+    <a href="#paths/1" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">paths(patch)</h1>
+
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L121" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@spec</span> paths(<a href="#t:t/0">t</a>()) :: [<a href="Delta.Json.Pointer.html#t:t/0">Delta.Json.Pointer.t</a>()]</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="squash/2">
 
   <div class="detail-header">
@@ -519,7 +555,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">squash(patch1, patch2)</h1>
 
-      <a href="https://github.com/delta-documents/delta/blob/4527a1cbc6f1caa10b323b7145f2f1a26e9d5507/lib/delta/json/patch.ex#L88" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/delta-documents/delta/blob/78425c3ca7d2f28d1e45825022b2fef53dc81f4c/lib/delta/json/patch.ex#L88" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
